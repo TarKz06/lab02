@@ -43,6 +43,10 @@ body {
     cursor: not-allowed;
 }
 
+.disabledImage {
+    visibility:hidden
+}
+
 h1 {
     font-size: 50px;
 }
