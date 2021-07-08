@@ -40,7 +40,8 @@ data() {
 },
 methods: {
     addToCart() {
-        this.cart += 1
+        this.Semit('add-to-cart')
+
     },
     updateImage(variantImage) {
         this.image = variantImage
