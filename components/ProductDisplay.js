@@ -1,4 +1,10 @@
 app.component('product-display',{
+    props: {
+        premium:{
+            type: Boolean,
+            required: true
+        }
+    },
     template:
     /*html*/
     `   <div class="product-display">
@@ -29,7 +35,6 @@ data() {
             { id: 2234, color: 'green', image: './assets/images/socks_green.jpg',quantity: 50 },
             { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg',quantity: 0 }
         ],
-        cart: 0,
         selectedVariant:0,
         onSale: true
     }
