@@ -2,6 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             product: 'Shoes',
+            brand: 'SE 331',
             image: './assets/images/socks_green.jpg',
             inStock: true,
             inventory: 100,
