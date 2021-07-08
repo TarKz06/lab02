@@ -18,9 +18,7 @@ app.component('product-display',{
             <p v-else-if="inventory <= 10 && inventory > 0">In Stock</p>
             <p v-else>Out of Stock</p>
             <p>Shipping: {{shipping}}</p>
-            <ul>
-                <li v-for="detail in details">{{ detail }}</li>
-            </ul>
+
             <div v-for="(variant,index) in variants" :key="variant.id" @mouseover="updateVariant(index)" class="color-circle":style="{backgroundColor:variant.color}"></div>
             <button class=" button " :disabled='!inStock':class="{disabledButton: !inStock} "@click="addToCart ">Add to Cart</button>
         </div>
@@ -72,4 +70,31 @@ computed:{
         return 30;
     }
 },
+})
+
+
+
+
+app.component('product-detail',{
+    props: {
+        premium:{
+            type: Boolean,
+            required: true
+        }
+    },
+    template:
+    /*html*/
+    `   <div class="product-display">
+            <ul>
+                <li v-for="detail in details">{{detail }}</li>
+            
+            </ul>
+</div>`,
+data() {
+    return {
+        details: ['50% cotton', '30% wool', '20% polyester'],
+    }
+},
+
+
 })
