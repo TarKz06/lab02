@@ -35,5 +35,5 @@ const app = Vue.createApp({
             return this.variants[this.selectedVariant].quantity
         }
     },
-    
+    //
 })
