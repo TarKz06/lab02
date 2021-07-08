@@ -14,6 +14,9 @@ const app = Vue.createApp({
 
         updateCart(id){
             this.cart.push(id);    
+        },
+        removeToCart(id){
+            this.cart.pop(id);  
         }
     }
 })

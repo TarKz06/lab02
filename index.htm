@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div> -->
-        <product-display :premium="premium"@add-to-cart="updateCart"></product-display>
+        <product-display :premium="premium"@add-to-cart="updateCart" @remove-to-cart="removeToCart"></product-display>
 
         <product-detail :detail="details"></product-detail>
 

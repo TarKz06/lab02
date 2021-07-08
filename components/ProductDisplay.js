@@ -18,9 +18,9 @@ app.component('product-display',{
             <p v-else-if="inventory <= 10 && inventory > 0">In Stock</p>
             <p v-else>Out of Stock</p>
             <p>Shipping: {{shipping}}</p>
-
             <div v-for="(variant,index) in variants" :key="variant.id" @mouseover="updateVariant(index)" class="color-circle":style="{backgroundColor:variant.color}"></div>
             <button class=" button " :disabled='!inStock':class="{disabledButton: !inStock} "@click="addToCart ">Add to Cart</button>
+         <button class=" button " @click="removeToCart">remove</button>
         </div>
     </div>
 </div>`,
@@ -45,12 +45,16 @@ methods: {
         this.$emit('add-to-cart',this.variants[this.selectedVariant].id)
 
     },
+    removeToCart(){
+        this.$emit('remove-to-cart',this.variants[this.selectedVariant].id)
+    },
     updateImage(variantImage) {
         this.image = variantImage
     },
     updateVariant (index){
         this.selectedVariant = index;
     },
+  
 
 },
 computed:{
