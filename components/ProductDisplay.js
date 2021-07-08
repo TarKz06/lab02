@@ -33,8 +33,8 @@ data() {
         variants: [
             { id: 2234, color: 'green', image: './assets/images/socks_green.jpg',quantity: 50 },
             { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg',quantity: 0 }
-    
-        ],activeClass: true,
+    ],
+        activeClass: true,
         selectedVariant:0,
         onSale: true,
         
@@ -42,7 +42,7 @@ data() {
 },
 methods: {
     addToCart() {
-        this.Semit('add-to-cart')
+        this.$emit('add-to-cart')
 
     },
     updateImage(variantImage) {
