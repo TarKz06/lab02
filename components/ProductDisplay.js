@@ -33,9 +33,11 @@ data() {
         variants: [
             { id: 2234, color: 'green', image: './assets/images/socks_green.jpg',quantity: 50 },
             { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg',quantity: 0 }
-        ],
+    
+        ],activeClass: true,
         selectedVariant:0,
-        onSale: true
+        onSale: true,
+        
     }
 },
 methods: {
@@ -48,7 +50,8 @@ methods: {
     },
     updateVariant (index){
         this.selectedVariant = index;
-    }
+    },
+
 },
 computed:{
     title(){
@@ -78,24 +81,23 @@ computed:{
 
 app.component('product-detail',{
     props: {
-        premium:{
-            type: Boolean,
+        detail:{
+            type: Array,
             required: true
         }
     },
     template:
     /*html*/
-    `   <div class="product-display">
+    `  
             <ul>
-                <li v-for="detail in details">{{detail }}</li>
-            
+                <li v-for="detail in details">{{detail}}</li>
             </ul>
-</div>`,
-data() {
-    return {
-        details: ['50% cotton', '30% wool', '20% polyester'],
-    }
-},
+`,
 
-
+computed: {
+    details(){
+        if(this.detail){
+            return this.detail
+        }
+    }}
 })
